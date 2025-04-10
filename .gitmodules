@@ -1,0 +1,3 @@
+[submodule "neeraj-project"]
+	path = neeraj-project
+	url = https://github.com/ShubhamRushData/neeraj-project.git
