@@ -1,3 +1,5 @@
+// app/layout.js (or layout.tsx if using TypeScript)
+
 export const metadata = {
   title: 'My Newsboard',
   description: 'Post & manage your news',
@@ -6,29 +8,29 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body style={{ margin: 0, fontFamily: 'Arial, sans-serif' }}>
-        <nav style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          background: '#1a202c',
-          color: 'white',
-          padding: '1rem 2rem',
-        }}>
-          <a href="/todos" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }}>
+      <body className="m-0 font-sans bg-gray-50 text-gray-900">
+        {/* Navbar */}
+        <nav className="flex items-center justify-between bg-gray-900 text-white px-6 py-4 shadow-md">
+          <a
+            href="/todos"
+            className="text-xl font-bold tracking-wide hover:text-gray-300 transition"
+          >
             📰 MyNews
           </a>
-          <a href="/add-todo" style={{
-            color: '#fff',
-            background: '#3182ce',
-            padding: '0.5rem 1rem',
-            borderRadius: '5px',
-            textDecoration: 'none'
-          }}>
+          <a
+            href="/add-todo"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition"
+          >
             ➕ Create Post
           </a>
         </nav>
-        <main>{children}</main>
+
+        {/* Page Content */}
+        <main className="min-h-screen flex items-center justify-center bg-white">
+          <div className="w-full flex items-center justify-center px-5 md:px-80 bg-white shadow-lg rounded-lg ">
+            {children}
+          </div>
+        </main>
       </body>
     </html>
   );

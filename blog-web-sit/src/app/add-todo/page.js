@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+import "../globals.css"
+
 export default function AddTodoPage() {
   const router = useRouter();
   const [title, setTitle] = useState('');
@@ -24,15 +26,16 @@ export default function AddTodoPage() {
   };
 
   return (
-    <div style={{ padding: '2rem', maxWidth: '700px', margin: 'auto' }}>
-      <h2>Create Post</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="px-4 bg-[#cae9d3]  rounded-lg py-10 max-w-2xl mx-auto">
+      <h2 className="text-2xl font-bold text-gray-800 mb-6">Create Post</h2>
+      <form onSubmit={handleSubmit} className="space-y-6 ">
         <input
+          type="text"
           placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
-          style={{ width: '100%', padding: 10, marginBottom: 10 }}
+          className="w-full px-4 text-black py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <textarea
           placeholder="Description"
@@ -40,19 +43,17 @@ export default function AddTodoPage() {
           onChange={(e) => setDescription(e.target.value)}
           required
           rows={6}
-          style={{ width: '100%', padding: 10, marginBottom: 10 }}
+          className="w-full px-4 text-black py-2 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-        <button type="submit" style={{
-          background: '#3182ce',
-          color: 'white',
-          padding: '10px 20px',
-          border: 'none',
-          borderRadius: '5px',
-          cursor: 'pointer'
-        }}>
+        <button
+          type="submit"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md transition duration-200"
+        >
           Submit Post
         </button>
       </form>
     </div>
+
+    
   );
 }
