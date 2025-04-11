@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
             href="/add-todo"
             className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition"
           >
-            ➕ Create Post
+           Create Post
           </a>
         </nav>
 

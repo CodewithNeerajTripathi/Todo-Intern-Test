@@ -13,8 +13,8 @@ export default function TodoEditClient({ todo }) {
       body: JSON.stringify({ title, description }),
     });
 
-    if (res.ok) alert("✅ Post Updated Successfully!");
-    else alert("❌ Failed to update.");
+    if (res.ok) alert(" Post Updated Successfully!");
+    else alert(" Failed to update.");
   };
 
   return (
